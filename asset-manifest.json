@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/%3Cwelcome-ISBC%3E/static/css/main.d4f213fd.chunk.css",
+    "main.js": "/%3Cwelcome-ISBC%3E/static/js/main.d04c8559.chunk.js",
+    "main.js.map": "/%3Cwelcome-ISBC%3E/static/js/main.d04c8559.chunk.js.map",
+    "runtime-main.js": "/%3Cwelcome-ISBC%3E/static/js/runtime-main.94bed38c.js",
+    "runtime-main.js.map": "/%3Cwelcome-ISBC%3E/static/js/runtime-main.94bed38c.js.map",
+    "static/js/2.01388643.chunk.js": "/%3Cwelcome-ISBC%3E/static/js/2.01388643.chunk.js",
+    "static/js/2.01388643.chunk.js.map": "/%3Cwelcome-ISBC%3E/static/js/2.01388643.chunk.js.map",
+    "index.html": "/%3Cwelcome-ISBC%3E/index.html",
+    "precache-manifest.e322fd66d9d85dd10d3b2014658a7f1b.js": "/%3Cwelcome-ISBC%3E/precache-manifest.e322fd66d9d85dd10d3b2014658a7f1b.js",
+    "service-worker.js": "/%3Cwelcome-ISBC%3E/service-worker.js",
+    "static/css/main.d4f213fd.chunk.css.map": "/%3Cwelcome-ISBC%3E/static/css/main.d4f213fd.chunk.css.map",
+    "static/js/2.01388643.chunk.js.LICENSE.txt": "/%3Cwelcome-ISBC%3E/static/js/2.01388643.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.94bed38c.js",
+    "static/js/2.01388643.chunk.js",
+    "static/css/main.d4f213fd.chunk.css",
+    "static/js/main.d04c8559.chunk.js"
+  ]
+}
