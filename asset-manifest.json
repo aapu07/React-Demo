@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/welcome-ISBC/static/css/main.d4f213fd.chunk.css",
-    "main.js": "/welcome-ISBC/static/js/main.2d6d9368.chunk.js",
-    "main.js.map": "/welcome-ISBC/static/js/main.2d6d9368.chunk.js.map",
+    "main.js": "/welcome-ISBC/static/js/main.f105ce11.chunk.js",
+    "main.js.map": "/welcome-ISBC/static/js/main.f105ce11.chunk.js.map",
     "runtime-main.js": "/welcome-ISBC/static/js/runtime-main.103ab03c.js",
     "runtime-main.js.map": "/welcome-ISBC/static/js/runtime-main.103ab03c.js.map",
-    "static/js/2.01388643.chunk.js": "/welcome-ISBC/static/js/2.01388643.chunk.js",
-    "static/js/2.01388643.chunk.js.map": "/welcome-ISBC/static/js/2.01388643.chunk.js.map",
+    "static/js/2.cff12367.chunk.js": "/welcome-ISBC/static/js/2.cff12367.chunk.js",
+    "static/js/2.cff12367.chunk.js.map": "/welcome-ISBC/static/js/2.cff12367.chunk.js.map",
     "index.html": "/welcome-ISBC/index.html",
-    "precache-manifest.d6f68125842ece745eb3129fa8093a64.js": "/welcome-ISBC/precache-manifest.d6f68125842ece745eb3129fa8093a64.js",
+    "precache-manifest.f37b54f50e3e4f7d891ac31af58148d1.js": "/welcome-ISBC/precache-manifest.f37b54f50e3e4f7d891ac31af58148d1.js",
     "service-worker.js": "/welcome-ISBC/service-worker.js",
     "static/css/main.d4f213fd.chunk.css.map": "/welcome-ISBC/static/css/main.d4f213fd.chunk.css.map",
-    "static/js/2.01388643.chunk.js.LICENSE.txt": "/welcome-ISBC/static/js/2.01388643.chunk.js.LICENSE.txt"
+    "static/js/2.cff12367.chunk.js.LICENSE.txt": "/welcome-ISBC/static/js/2.cff12367.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.103ab03c.js",
-    "static/js/2.01388643.chunk.js",
+    "static/js/2.cff12367.chunk.js",
     "static/css/main.d4f213fd.chunk.css",
-    "static/js/main.2d6d9368.chunk.js"
+    "static/js/main.f105ce11.chunk.js"
   ]
 }
