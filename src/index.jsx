@@ -6,11 +6,8 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-  <BrowserRouter>
-  <React.StrictMode>
-    
-  </React.StrictMode>
-    <App />
+  <BrowserRouter basename="/https://aapu07.github.io/">
+     <App />
   </BrowserRouter>,
   document.getElementById('root')
 );
