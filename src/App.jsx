@@ -8,6 +8,7 @@ import Navigation from './components/navigation/Navigation';
 import NotFound from './components/notfound/NotFound';
 import TestFetch from './components/testfetch/TestFetch';
 import Jeopardy from './components/jeopardy/Jeopardy';
+//import Display from './components/display/Display';
 
 
 function App() {

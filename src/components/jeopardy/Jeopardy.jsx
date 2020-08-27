@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 //import our service
 import JeopardyService from "../jeopardyService/JeopardyService";
+import Display from "../display/Display";
 class Jeopardy extends React.Component {
     //set our initial state and set up our service as this.client on this component
     constructor(props) {
@@ -10,6 +11,7 @@ class Jeopardy extends React.Component {
             data: {},
             score: 0,
             formData: { userAnswer: '' },
+            currentCa:{}
 
         }
     }
@@ -26,6 +28,7 @@ class Jeopardy extends React.Component {
     componentDidMount() {
         this.getNewQuestion();
     }
+    
     handleChange = (event) => {
 
         const newformData = { ...this.state.formDate };
@@ -59,42 +62,12 @@ class Jeopardy extends React.Component {
 
     //display the results on the screen
     render() {
-        let element = "Loading"
-        if (this.state.data.category !== undefined) {
-            element = (
-                <div><div>
-                    Question: {this.state.data.question}
-                    <br />
-            Point Value: {this.state.data.value}
-                    <br />
-            Title: {this.state.data.category.title}
-                    <br/>
-           User Score: {this.state.score}
-           
-                </div>
-                    <form onSubmit={this.handleSubmit}>
-
-                        <div>
-                            <label htmlFor="userAnswer">Answer</label>
-                            <input
-                                type="text"
-                                name="userAnswer"
-                                value={this.state.formData.userAnswer}
-                                onChange={this.handleChange}
-                                />
-
-                        </div>
-                        <button>Submit Answer</button>
-                                Answer: {this.state.data.answer}        
-                    </form>
-                </div>
-            )
-        }
-        return (
-            <div>
-                {element}
-            </div>
-        );
+        return <Display 
+        state ={this.state} 
+        handleChange= {this.handleChange}
+        handleSubmit={this.handleSubmit}
+        
+        />
     }
 }
 export default Jeopardy;
