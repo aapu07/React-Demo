@@ -6,6 +6,9 @@ import Clock from "./components/clock/Clock.jsx";
 import Contact from './components/contact/Contact';
 import Navigation from './components/navigation/Navigation';
 import NotFound from './components/notfound/NotFound';
+import TestFetch from './components/testfetch/TestFetch';
+import Jeopardy from './components/jeopardy/Jeopardy';
+
 
 function App() {
   return (
@@ -21,10 +24,12 @@ function App() {
         <Route
           exact
           path="/"
-          render={(props) => <Welcome {...props} name="Davey Strus" />}
+          render={(props) => <Welcome {...props} name="ISBC" />}
         />
         <Route path="/clock" component={Clock} />
         <Route path="/contact" component={Contact} />
+        <Route path="/Jeopardy" component={Jeopardy} />
+        <Route path="/TestFetch" component ={TestFetch} />
         <Route path="*" component={NotFound} />
 
       </Switch>

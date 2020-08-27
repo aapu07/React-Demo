@@ -5,8 +5,9 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+
 ReactDOM.render(
-  <BrowserRouter basename="/https://aapu07.github.io/">
+  <BrowserRouter basename="/https://aapu07.github.io/.">
      <App />
   </BrowserRouter>,
   document.getElementById('root')
