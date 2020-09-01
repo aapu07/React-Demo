@@ -8,19 +8,20 @@ class Jeopardy extends React.Component {
         super(props);
         this.client = new JeopardyService();
         this.state = {
-            data: {},
+            data: [],
             score: 0,
-            formData: { userAnswer: '' },
-            currentCa:{}
-
+            formData: {
+                userAnswer: ''
+            },
+            choiceNumber: null,
         }
     }
     //get a new random question from the API and add it to the data object in state
     getNewQuestion() {
         return this.client.getQuestion().then(result => {
-            //console.log(result)
+            console.log(result.data)
             this.setState({
-                data: result.data[0]
+                data: result.data
             })
         })
     }
@@ -28,7 +29,7 @@ class Jeopardy extends React.Component {
     componentDidMount() {
         this.getNewQuestion();
     }
-    
+
     handleChange = (event) => {
 
         const newformData = { ...this.state.formDate };
@@ -38,36 +39,66 @@ class Jeopardy extends React.Component {
     }
 
     handleSubmit = (event) => {
-
         event.preventDefault();
-        if (this.state.data.answer === this.state.formData.userAnswer) {
 
+        let userAnswer = this.state.formData.userAnswer
+        let realAnswer = this.state.data[this.state.choiceNumber].answer
+        let isCorrectAnswer = userAnswer === realAnswer
+
+        if (isCorrectAnswer) {
+            console.log("correct answer")
             this.setState((prevState) => {
-                return { score: prevState.score + prevState.data.value }
+                return {
+                    score: prevState.score + prevState.data[prevState.choiceNumber].value,
+                    choiceNumber: null,
+                    formData: {
+                        userAnswer: ""
+                    },
+                    prevAnswer: prevState.data[prevState.choiceNumber].answer,
+                }
             })
-           console.log("correct answer")
 
         } else {
             this.setState((prevState) => {
-                return { score: prevState.score - prevState.data.value }
+                return {
+                    score: prevState.score - prevState.data[prevState.choiceNumber].value,
+                    choiceNumber: null,
+                    formData: {
+                        userAnswer: ""
+                        
+                    },
+                    prevAnswer: prevState.data[prevState.choiceNumber].answer,
+                }
             })
             console.log("incorrect answer")
         }
 
-        this.getNewQuestion ()
+        this.getNewQuestion()
         this.setState({
             submitted: true
         });
     }
 
+    handleChoice = (event) =>
+        this.setState({
+            choiceNumber: event.target.id
+        })
+
     //display the results on the screen
     render() {
-        return <Display 
-        state ={this.state} 
-        handleChange= {this.handleChange}
-        handleSubmit={this.handleSubmit}
-        
-        />
+
+
+        return (
+            <div className="Jeopardy">
+                <Display
+                    state={this.state}
+                    handleChange={this.handleChange}
+                    handleSubmit={this.handleSubmit}
+                    handleChoice={this.handleChoice}
+                />
+            </div>
+
+        );
     }
 }
 export default Jeopardy;

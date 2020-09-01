@@ -23,15 +23,28 @@ function App() {
           render={(props) => { return <Welcome {...props} name={props.match.params.name} /> }}
         />
         <Route
-          exact
-          path="/"
-          render={(props) => <Welcome {...props} name="ISBC" />}
+          path="/clock"
+          component={Clock}
         />
-        <Route path="/clock" component={Clock} />
-        <Route path="/contact" component={Contact} />
-        <Route path="/Jeopardy" component={Jeopardy} />
-        <Route path="/TestFetch" component ={TestFetch} />
-        <Route path="*" component={NotFound} />
+        <Route
+          path="/TestFetch"
+          component={TestFetch}
+        />
+        <Route
+          path="/contact"
+          component={Contact}
+        />
+        <Route
+          path="/Jeopardy"
+          component={Jeopardy}
+        />
+        <Route
+          path='/'
+          render={(props) => <Welcome {...props} name="Davey Struss" />}
+        />
+        <Route
+          component={NotFound}
+        />
 
       </Switch>
 

@@ -1,42 +1,62 @@
 import React from 'react';
 
-function Display (props){
-    let element = "Loading"
-        if (props.state.data.category !== undefined) {
-            element = (
-                <div><div>
-                    Question: {props.state.data.question}
-                    <br />
-            Point Value: {props.state.data.value}
-                    <br />
-            Title: {props.state.data.category.title}
-                    <br/>
-           User Score: {props.state.score}
-           
-                </div>
-                    <form onSubmit={props.handleSubmit}>
+function Display(props) {
+    let element = "Loading..."
+    let hasUserChosen = props.state.choiceNumber !== null
 
-                        <div>
-                            <label htmlFor="userAnswer">Answer</label>
-                            <input
-                                type="text"
-                                name="userAnswer"
-                                value={props.state.formData.userAnswer}
-                                onChange={props.handleChange}
-                                />
-
-                        </div>
-                        <button>Submit Answer</button>
-                                Answer: {props.state.data.answer}        
-                    </form>
-                </div>
-            )
-        }
-        return (
+    if(hasUserChosen){
+        let currentClueObject = props.state.data[props.state.choiceNumber]
+        element = (
             <div>
-                {element}
+                Category: {currentClueObject.category.title}
+                <br/>
+                Question: {currentClueObject.question}
+                <br/>
+                Value: {currentClueObject.value}
+                <form onSubmit={props.handleSubmit}>
+
+                <div>
+                    <label htmlFor="userAnswer">Answer</label>
+                    <input
+                        type="text"
+                        name="userAnswer"
+                        value={props.state.formData.userAnswer}
+                        onChange={props.handleChange}
+                    />
+
+                </div>
+                <button>Submit Answer</button>
+
+            </form>
             </div>
-        );
+        )
+    }
+    if (props.state.data.length > 0 && !hasUserChosen) {
+        element = (
+            <>
+                {props.state.data.map((questionObj, index) => {
+                    return (
+                        <button id={index} key={index} onClick={props.handleChoice}>
+                            
+                            {questionObj.category.title}
+                        </button>
+                    )
+                })}
+                
+            </>
+        )
+    }
+    return (
+        <div>
+            {element}
+
+            Score: {props.state.score}
+            <br/>
+            Previous Answer : {props.state.prevAnswer}
+            
+        </div>
+
+    );
 
 }
 
